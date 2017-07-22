@@ -7,3 +7,17 @@ A spare is when the player knocks down all 10 pins in two tries. The bonus for t
 A strike is when the player knocks down all 10 pins on his first try. The bonus for that frame is the value of the next two balls rolled.
 
 In the tenth frame a player who rolls a spare or strike is allowed to roll the extra balls to complete the frame. However no more than three balls can be rolled in tenth frame.
+
+
+Write class "BowlingGame" that has two methods
+roll(pins)
+called each time the player rolls a ball. The argument is the number of pins knocked down.
+score()
+called only after the very end of the game. Returns total score of the game.
+
+One game
+A game has 10 frames
+A frame has one or two rolls
+The tenth frame has two or three rolls. It's different from all the other frames
+The score function must iterate through all the frames, and calculate all their scores
+The score for a spare or a strike depends on the frames successor
