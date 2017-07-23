@@ -16,7 +16,6 @@ BowlingGame.prototype.score = function() {
   for (let i = 0; i < this.rolls.length; i++) {
     sum += this.rolls[i];
   }
-
   return sum;
 }
 

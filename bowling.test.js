@@ -4,7 +4,7 @@ describe('Bowling Game should', () => {
   let game;
 
   beforeEach(() => {
-    game = new BowlingGame(); 
+    game = new BowlingGame();
   });
 
   function rollMany(times, pins) {
@@ -29,5 +29,8 @@ describe('Bowling Game should', () => {
     expect(game.isSpare(5, 5)).toBeTruthy();
     expect(game.isSpare(5, 4)).toBeFalsy();
   });
-
+  test('handle a strike', () =>{
+    expect(game.isStrike(10)).toBeTruthy();
+    expect(game.isStrike(4)).toBeFalsy());
+  })
 });
