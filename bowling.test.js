@@ -29,8 +29,20 @@ describe('Bowling Game should', () => {
     expect(game.isSpare(5, 5)).toBeTruthy();
     expect(game.isSpare(5, 4)).toBeFalsy();
   });
+
   test('handle a strike', () =>{
     expect(game.isStrike(10)).toBeTruthy();
-    expect(game.isStrike(4)).toBeFalsy());
+    expect(game.isStrike(4)).toBeFalsy();
+  });
+
+  test('handle a bonus for spare', () => {
+    rollMany(2, 5);
+    game.roll(4);
+    var bonus = game.calculateSpareBonus(0);
+  })
+  test('handle a bonus for strike', () => {
+    rollMany(1, 10);
+    game.roll(4);
+    var bonus = game.calculateSpareBonus(0);
   })
 });
