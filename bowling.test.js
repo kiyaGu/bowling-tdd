@@ -38,11 +38,32 @@ describe('Bowling Game should', () => {
   test('handle a bonus for spare', () => {
     rollMany(2, 5);
     game.roll(4);
-    var bonus = game.calculateSpareBonus(0);
-  })
+    let bonus = game.calculateSpareBonus(0);
+    expect(bonus).toBe(4)
+  });
   test('handle a bonus for strike', () => {
     rollMany(1, 10);
-    game.roll(4);
-    var bonus = game.calculateSpareBonus(0);
-  })
+    game.roll(8);
+    game.roll(6);
+    let bonus = game.calculateStrikeBonus(0);
+    expect(bonus).toBe(14)
+  });
+  test('calculates the score', () => {
+    game.roll(10);
+    game.roll(9);
+    game.roll(1);
+    rollMany(2,5);
+    game.roll(7);
+    game.roll(2);
+    rollMany(3,10);
+    game.roll(9);
+    game.roll(0);
+    game.roll(8);
+    game.roll(2);
+    game.roll(9);
+    game.roll(1);
+    game.roll(10);
+    let score = game.score();
+    expect(score).toBe(187)
+  });
 });
